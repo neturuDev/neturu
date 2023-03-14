@@ -1,7 +1,6 @@
 import React from 'react'
 import 'normalize.css/normalize.css'
 import './PageShell.scss'
-import '../fonts/Comfortaa-VariableFont_wght.ttf'
 import { PageContextProvider } from './usePageContext'
 import DefaultLayout from '../layouts/default'
 

@@ -3,6 +3,7 @@ import React from 'react'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import logoUrl from './logo.svg'
+import fontUrl from '../fonts/Comfortaa-VariableFont_wght.ttf'
 
 export { render }
 // See https://vite-plugin-ssr.com/data-fetching
@@ -27,6 +28,7 @@ async function render(pageContext) {
       <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="${logoUrl}" />
+        <link rel="preload" href="${fontUrl}" as="font" type="font/ttf" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
