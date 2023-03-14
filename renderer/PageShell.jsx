@@ -1,8 +1,9 @@
 import React from 'react'
-import logo from './logo.svg'
-import './PageShell.css'
+import 'normalize.css/normalize.css'
+import './PageShell.scss'
+import '../fonts/Comfortaa-VariableFont_wght.ttf'
 import { PageContextProvider } from './usePageContext'
-import { Link } from './Link'
+import DefaultLayout from '../layouts/default'
 
 export { PageShell }
 
@@ -10,18 +11,9 @@ function PageShell({ pageContext, children }) {
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        <Layout>
-          <Sidebar>
-            <Logo />
-            <Link className="navitem" href="/">
-              Home
-            </Link>
-            <Link className="navitem" href="/about">
-              About
-            </Link>
-          </Sidebar>
-          <Content>{children}</Content>
-        </Layout>
+        <DefaultLayout>
+          {children}
+        </DefaultLayout>
       </PageContextProvider>
     </React.StrictMode>
   )
