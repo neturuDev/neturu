@@ -1,7 +1,4 @@
-// const comfortaa = Comfortaa({
-//   subsets: ['latin', 'cyrillic'],
-//   weight: ['400', '700'],
-// })
+import React from 'react'
 
 export default function DefaultLayout({ children }) {
   return (<>
