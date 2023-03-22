@@ -46,20 +46,12 @@ export async function onBeforeRender(pageContext) {
     // Our render and hydrate functions we defined earlier pass `pageContext.pageProps` to
     // the root React component `Page`; this is where we define `pageProps`.
     const post = data.queryPostsContents[0].flatData;
-    const mdxSource = post.content;
-    const pageProps = { post, source: mdxSource};
-    const currentPageTitle = post.seo ? post.seo.pageTitle : `${post.title} | Neturu`;
-    const currentPageDescription = post.seo ? post.seo.pageDescription : post.preview;
+    const pageProps = { post, source: post.content};
   
     // We make `pageProps` available as `pageContext.pageProps`
     return {
       pageContext: {
-        pageProps,
-        documentProps: {
-          title: currentPageTitle,
-          description: currentPageDescription,
-          lang: 'ru'
-        }
+        pageProps
       }
     };
   }

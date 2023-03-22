@@ -2,14 +2,25 @@ import React from 'react'
 import parse from 'html-react-parser'
 import Date from '../../components/date'
 
-export { Page }
+export { Page, getDocumentProps }
 
-export const documentProps = {
-    // This title and description will override the defaults
-    title: 'Статья',
-    description: 'Описание одной статьи',
+// export const documentProps = {
+//     // This title and description will override the defaults
+//     title: 'Статья',
+//     description: 'Описание одной статьи',
+//     lang: 'ru'
+//   }
+
+function getDocumentProps(pageProps) {
+  const { post } = pageProps;
+  const currentPageTitle = post.seo ? post.seo.pageTitle : `${post.title} | Neturu`;
+  const currentPageDescription = post.seo ? post.seo.pageDescription : post.preview;
+  return {
+    title: currentPageTitle,
+    description: currentPageDescription,
     lang: 'ru'
   }
+}
 
   function Page(pageProps) {
     const { post, source } = pageProps;

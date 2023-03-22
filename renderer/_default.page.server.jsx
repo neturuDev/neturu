@@ -23,10 +23,12 @@ async function render(pageContext) {
   )
 
   // See https://vite-plugin-ssr.com/head
-  const { documentProps } = pageContext.exports
-  const title = (documentProps && documentProps.title)
-  const desc = (documentProps && documentProps.description)
-  const lang = (documentProps && documentProps.lang)
+
+   // Our custom export is available as `pageContext.exports.getDocumentProps`
+   const { getDocumentProps } = pageContext.exports
+
+   // `getDocumentProps()` can use the fetched data to provide the page's meta data
+   const { title, description, lang } = getDocumentProps(pageProps)
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="${lang}">
@@ -35,7 +37,7 @@ async function render(pageContext) {
         <link rel="preload" href="${fontUrl}" as="font" type="font/ttf" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
-        <meta name="description" content="${desc}" />
+        <meta name="description" content="${description}" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
         <link rel="icon" type="image/png" sizes="32x32" href="${favicon32Url}" />
