@@ -1,3 +1,4 @@
+import React from 'react'
 import Date from './date'
 
 export default function BlogItem({ title, slug, imageUrl, metaData, previewText, publishedAt, minutesToRead}) {
@@ -7,13 +8,6 @@ export default function BlogItem({ title, slug, imageUrl, metaData, previewText,
   return (
     <div className='blog-list-item'>
       <a href={`articles/${slug}`}>
-        {/* <Image
-          src={imageUrl}
-          alt={title}
-          width={pixelWidth}
-          height={pixelHeight}
-          priority
-        /> */}
         <img
             src={imageUrl}
             alt={title}
