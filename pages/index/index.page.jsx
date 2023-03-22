@@ -1,12 +1,13 @@
 import React from 'react'
 
-export { Page }
+export { Page, getDocumentProps }
 
-export const documentProps = {
-  // This title and description will override the defaults
-  title: 'Volodymyr Cherevchuk || Software engineer',
-  description: 'Personal website of Software engineer',
-  lang: 'en'
+function getDocumentProps() {
+  return {
+    title: 'Volodymyr Cherevchuk || Software engineer',
+    description: 'Personal website of Software engineer',
+    lang: 'en'
+  }
 }
 
 function Page() {
