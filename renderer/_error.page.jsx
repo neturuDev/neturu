@@ -3,17 +3,8 @@ import Error from '../components/Error';
 
 export { Page, getDocumentProps }
 
-function getDocumentProps() {
-  return {
-    title: 'Volodymyr Cherevchuk || Software engineer',
-    description: 'Personal website of Software engineer',
-    lang: 'en'
-  }
-}
-
-function Page({ is404 }) {
+function setErrorData(is404) {
   let errorHeading, errorDescription;
-
   if (is404) {
     errorHeading = '404 Page Not Found';
     errorDescription = 'This page could not be found.';
@@ -21,6 +12,22 @@ function Page({ is404 }) {
     errorHeading = '500 Internal Server Error';
     errorDescription = 'Something went wrong.';
   }
+
+  return {errorHeading, errorDescription};
+}
+
+function getDocumentProps({ is404 }) {
+  const {errorHeading, errorDescription} = setErrorData(is404);
+  return {
+    title: errorHeading,
+    description: errorDescription,
+    lang: 'en'
+  }
+}
+
+function Page({ is404 }) {
+  const {errorHeading, errorDescription} = setErrorData(is404);
+
   return (
     <div className='content-container flex-center'>
       <Error
