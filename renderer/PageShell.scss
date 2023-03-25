@@ -267,11 +267,16 @@ figure{
     margin-bottom: 0.5rem;
   }
   .back-to-list{
-    padding: 1rem;
+    padding: 0.7rem;
     background-color: var(--color-primary-bright);
     color:var(--color-snow-white);;
     border-radius: var(--border-radius);
     margin-bottom: var(--global-padding-double);
+    margin-top: var(--global-padding-double);
+    border: var(--global-border-width-double) solid var(--color-primary-bright);
+    &:hover, &:focus{
+      box-shadow: 0 0 30px rgba(3, 38, 150, 0.5) inset;
+    }
   }
 }
 
