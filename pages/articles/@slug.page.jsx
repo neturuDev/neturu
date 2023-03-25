@@ -4,13 +4,6 @@ import Date from '../../components/date'
 
 export { Page, getDocumentProps }
 
-// export const documentProps = {
-//     // This title and description will override the defaults
-//     title: 'Статья',
-//     description: 'Описание одной статьи',
-//     lang: 'ru'
-//   }
-
 function getDocumentProps(pageProps) {
   const { post } = pageProps;
   const currentPageTitle = post.seo ? post.seo.pageTitle : `${post.title} | Neturu`;

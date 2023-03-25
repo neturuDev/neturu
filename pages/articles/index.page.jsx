@@ -1,13 +1,14 @@
 import React from 'react'
 import BlogItem from "../../components/blogItem";
 
-export { Page }
+export { Page, getDocumentProps }
 
-export const documentProps = {
-  // This title and description will override the defaults
-  title: 'Статьи',
-  description: 'Статьи о веб-разработке, дизайнеб маркетинге и многом другом',
-  lang: 'ru'
+function getDocumentProps() {
+  return {
+    title: 'Статьи',
+    description: 'Статьи о веб-разработке, дизайнеб маркетинге и многом другом',
+    lang: 'ru'
+  }
 }
 
 function Page(pageProps) {
