@@ -1,10 +1,8 @@
 import React from 'react'
-import Date from './date'
+import Date from './Date'
 
 export default function BlogItem({ title, slug, imageUrl, metaData, previewText, publishedAt, minutesToRead}) {
   const {pixelWidth, pixelHeight} = metaData;
-  const d = new Date(publishedAt);
-  const publishedAtNorm = d.toLocaleString().toString();
   return (
     <div className='blog-list-item'>
       <a href={`articles/${slug}`}>

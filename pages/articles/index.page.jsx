@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogItem from "../../components/blogItem";
+import BlogItem from "../../components/BlogItem";
 
 export { Page, getDocumentProps }
 

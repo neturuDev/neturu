@@ -1,6 +1,6 @@
 import React from 'react'
 import parse from 'html-react-parser'
-import Date from '../../components/date'
+import Date from '../../components/Date'
 
 export { Page, getDocumentProps }
 
