@@ -2,8 +2,9 @@
 
 @font-face {
   font-family: 'Comfortaa';   /*Can be any text*/
-  src: local("Comfortaa"),
-    url("../fonts/Comfortaa-VariableFont_wght.ttf") format("truetype");
+  src: url('../fonts/Comfortaa-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 300 700;
+  font-display: swap;
 }
 
 /*vars*/
@@ -36,6 +37,7 @@
 html{
   font-family: 'Comfortaa', cursive;
   font-weight: 400;
+  font-variation-settings: "wght" 400;
 }
 
 html,
@@ -194,6 +196,8 @@ figure{
   h3{
     color: var(--color-primary);
     font-weight: 700;
+    font-size: 1.4em;
+    font-variation-settings: "wght" 700;
     line-height: 1.4;
     letter-spacing: 0.04em;
     margin-bottom: var(--global-padding-half);
