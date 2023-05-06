@@ -251,6 +251,14 @@ figure{
     a {
       text-decoration: underline;
     }
+    code {
+      padding: 0.125rem 0.3125rem 0.0625rem;
+      border: 1px solid #cacaca;
+      background-color: #e6e6e6;
+      font-family: Consolas,"Liberation Mono",Courier,monospace;
+      font-weight: 400;
+      color: #2a2e31;
+    }
   }
   h1, h2, h3, h4 {
     color: var(--color-primary-bright);
