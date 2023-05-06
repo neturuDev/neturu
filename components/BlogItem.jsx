@@ -5,7 +5,7 @@ export default function BlogItem({ title, slug, imageUrl, metaData, previewText,
   const {pixelWidth, pixelHeight} = metaData;
   return (
     <div className='blog-list-item'>
-      <a href={`articles/${slug}`}>
+      <a href={`/articles/${slug}`}>
         <img
             src={imageUrl}
             alt={title}
