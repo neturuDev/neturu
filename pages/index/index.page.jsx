@@ -4,7 +4,7 @@ export { Page, getDocumentProps }
 
 function getDocumentProps() {
   return {
-    title: 'Volodymyr Cherevchuk || Software engineer',
+    title: 'Website of a software engineer',
     description: 'Personal website of a passionate software engineer with eight years of commercial experience',
     lang: 'en'
   }
