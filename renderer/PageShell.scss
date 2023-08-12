@@ -155,7 +155,7 @@ figure{
   &.with-heading {
     margin-top: var(--global-padding);
     margin-bottom: calc(var(--global-padding-double)*1.5);
-    padding-top: calc(var(--global-padding-double)*1.5);
+    padding-top: calc(var(--global-padding-double)*1.4);
   }
   .card-heading{
     display: inline-block;
@@ -165,8 +165,8 @@ figure{
     color: var(--color-primary-light);
     box-shadow: 0 0 30px rgba(3, 38, 150, 0.5) inset, -1.5px 1.5px 5px rgba(0, 0, 0, 0.2);
     position: absolute;
-    top: -1rem;
-    left: calc(var(--global-padding)*1.5); 
+    top: -1.362rem;
+    left: calc(var(--global-padding)*1.5);
   }
 }
 
