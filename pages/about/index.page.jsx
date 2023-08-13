@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../../components/Card';
+import ImageBlock from '../../components/ImageBlock';
 import WUNU from '../../renderer/WUNU.png'
 
 export { Page, getDocumentProps }
@@ -53,14 +54,16 @@ function Page() {
         </Card>
         <Card heading={'Education'}>
           <div className='card-block'>
-            <img src={WUNU} alt="WUNU" />
-            <h3>{'Master’s, Organizational Management in West Ukrainian National University'}</h3>
-            <span>Sep 2009 - Jun 2010</span>
+            <ImageBlock image={WUNU} imageAlt='WUNU'>
+              <h3>{'Master’s, Organizational Management in West Ukrainian National University'}</h3>
+              <span>Sep 2009 - Jun 2010</span>
+            </ImageBlock>         
           </div>
           <div className='card-block'>
-            <img src={WUNU} alt="WUNU" />
-            <h3>{'Bachelor’s, Management in West Ukrainian National University'}</h3>
-            <span>Sep 2005 - Jun 2009</span>
+            <ImageBlock image={WUNU} imageAlt='WUNU'>
+              <h3>{'Bachelor’s, Management in West Ukrainian National University'}</h3>
+              <span>Sep 2005 - Jun 2009</span>
+            </ImageBlock>
           </div>
         </Card>
       </div>
