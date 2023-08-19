@@ -331,6 +331,8 @@ figure{
 
 .card-block:not(:last-child){
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .image-block{
@@ -370,6 +372,10 @@ figure{
 
   .image-block{
     display: flex;
+    align-items: center;
+    .image-wrapper{
+      margin-right: 1rem;
+    }
   }
 }
 
