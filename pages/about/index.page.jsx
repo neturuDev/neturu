@@ -32,6 +32,22 @@ function Page() {
             <p><span className='bright'>Responsibilities:</span> Web application development; code optimization and quality improvement; writing tests with RLT, Jest, Enzyme, Cypress, and Chai Assertion Library with 100% coverage for the unit tests.</p>
             <p><span className='bright'>Technologies:</span> GoogleMaps API · Postman · POC · Node.js · ESLint · Chai Assertion Library · Playwright · Enzyme · Redux · RTL · Cypress.io · Jest · MUI · HTML · CSS · JavaScript · Git · React.js · English.</p>
           </div>
+          <div className='card-block'>
+            <h3>Front End Developer (React.js)</h3>
+            <span>Ksisters - European eCommerce · Self-employed</span>
+            <span>Jun 2020 - Jul 2021 · 1 yr 2 mos</span>
+            <p>Project: <a href='https://ksisters.de/' target='_blank' rel='noreferrer'>Ksisters</a></p>
+            <p><span className='bright'>Responsibilities:</span> Front-end development (responsive and cross-browser, web application components creation); Libraries and frameworks integration, including MUI; Code optimization and quality improvement.</p>
+            <p><span className='bright'>Technologies:</span> TypeScript · ESLint · SCSS · Scalable Vector Graphics (SVG) · MUI · ZURB Foundation Framework · HTML · CSS · JavaScript · Git · React.js</p>
+          </div>
+          <div className='card-block'>
+            <h3>Full stack web developer, web designer, UI/UX designer</h3>
+            <span>Auto Gas Global trading</span>
+            <span>Mar 2016 - Jun 2020 · 4 yrs 4 mos</span>
+            <p>Projects: <span><a href='http://autogas.in.ua/ua/' target='_blank' rel='noreferrer'>Auto Gas Global</a></span> / <span><a href='http://prins.neturu.co.ua/' target='_blank' rel='noreferrer'>Prins</a></span> / <span><a href='http://stag.ua/' target='_blank' rel='noreferrer'>Stag</a></span> / <span><a href='http://greengas.it/' target='_blank' rel='noreferrer'>Greengas</a></span> / <span><a href='https://autogasmarket.ua/' target='_blank' rel='noreferrer'>Autogasmarket</a></span> / <span><a href='http://landirenzo.neturu.co.ua/' target='_blank' rel='noreferrer'>Landirenzo</a></span></p>
+            <p><span className='bright'>Responsibilities:</span> Develop projects’ Information architecture; Web design; Cross browser Front End development; Bitrix (PHP based CMS) template development; Bitrix components development; Implement new functionality and features; Maintain company projects (websites); Bitrix (PHP based CMS) administration.</p>
+            <p><span className='bright'>Technologies:</span> Bitrix CMS · Progressive Web Applications (PWAs) · SCSS · Scalable Vector Graphics (SVG) · ZURB Foundation Framework · SEO · HTML · CSS · JavaScript · Vue.js · jQuery · Git · PHP</p>
+          </div>
         </Card>
         <Card heading={'Certifications'}>
           <div className='card-block'>
