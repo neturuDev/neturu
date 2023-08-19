@@ -23,6 +23,18 @@ function Page() {
           <p>Attention to detail, desire to improve code and product quality, and business-oriented mindset. Ability to read and maintain other people’s code.</p>
           <p>I`m interested in new technologies and systematically acquiring new knowledge.</p>
         </Card>
+        <Card heading={'Skills'}>
+          <div className='card-block'>
+            <h3>Hard Skills</h3>
+          </div>
+          <div className='card-block'>
+            <h3>Soft Skills</h3>
+          </div>
+          <div className='card-block'>
+            <h3>Languages</h3>
+            <p>English - Professional working proficiency (Upper-Intermediate); Polish - Elementary proficiency (Pre-Intermediate); Ukrainian - native.</p>
+          </div>
+        </Card>
         <Card heading={'Experience'}>
           <div className='card-block'>
             <h3>Software Engineer (React.js, Node.js)</h3>
@@ -58,20 +70,6 @@ function Page() {
         <Card heading={'Certifications'}>
           <div className='card-block'>
             <h3 className='card-block-heading'>All about Node.js</h3>
-          </div>
-        </Card>
-        <Card heading={'Languages'}>
-          <div className='card-block'>
-            <h3>English</h3>
-            <span>Professional working proficiency</span>
-          </div>
-          <div className='card-block'>
-            <h3>Polish</h3>
-            <span>Elementary proficiency</span>
-          </div>
-          <div className='card-block'>
-            <h3>Ukrainian</h3>
-            <span>Native</span>
           </div>
         </Card>
         <Card heading={'Education'}>
