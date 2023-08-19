@@ -26,9 +26,11 @@ function Page() {
         <Card heading={'Skills'}>
           <div className='card-block'>
             <h3>Hard Skills</h3>
+            <p>HTML, CSS, JavaScript, Typescript, React.js, Redux, Material-UI, fetch API, Axios, Node.js, GoogleMaps API, Git, Zurb Foundation, Bootstrap, npm, RTL, Jest, Enzyme, Cypress, Chai, Sinon, Playwright, webpack, SVG, Photoshop, Illustrator, Figma, GitHub, Bitbucket.</p>
           </div>
           <div className='card-block'>
             <h3>Soft Skills</h3>
+            <p>Analytical, critical, and logical thinking; ability to lifelong learning, flexibility, openness to change, result-oriented. Ability to work as a team player and work independently.</p>
           </div>
           <div className='card-block'>
             <h3>Languages</h3>
