@@ -23,6 +23,7 @@
   --color-primary-light: #08259F;
   --color-primary-bright: #3c71ff;
   --color-secondary: #000717;
+  --color-text: #d8ccd8;
   --color-white: #FFEDFF;
   --color-snow-white: #ffffff;
 }
@@ -47,7 +48,7 @@ body {
 }
 
 body {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 img{
@@ -57,6 +58,7 @@ img{
 
 h1, h2, h3, h4, h5 {
   margin-bottom: 0.8em;
+  color: var(--color-white);
 }
 
 a {
@@ -70,6 +72,12 @@ p {
   line-height: 1.4em;
   &:not(:last-child){
     margin-bottom: 1em;
+  }
+  a {
+    text-decoration: wavy underline var(--color-primary-bright);
+  }
+  .marked{
+    color: var(--color-white);
   }
 }
 
@@ -167,6 +175,13 @@ figure{
     position: absolute;
     top: -1.362rem;
     left: calc(var(--global-padding)*1.5);
+  }
+
+  .subheading{
+    font-size: 0.9em;
+    span{
+      display: block;
+    }
   }
 }
 
