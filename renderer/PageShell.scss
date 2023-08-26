@@ -360,6 +360,31 @@ figure{
   }
 }
 
+.certifications-grid{
+  display: flex;
+    flex-flow: wrap;
+    min-width: 0px;
+    box-sizing: border-box;
+    min-width: 0px;
+.certification {
+    min-width: 0px;
+    width: calc(50% - 10px);
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    &:nth-child(even) {
+      margin-left: 10px;
+    }
+
+    &:nth-child(odd) {
+      margin-right: 10px;
+    }
+  }
+}
+
+
+
 @media screen and (max-width: 449px) {
   .image-block{
     text-align: center;

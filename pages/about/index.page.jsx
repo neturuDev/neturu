@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../../components/Card'
 import CardBlock from '../../components/CardBlock'
 import WUNU from '../../renderer/WUNU.png'
+import Certifications from '../../components/Сertifications'
 
 export { Page, getDocumentProps }
 
@@ -13,7 +14,8 @@ function getDocumentProps() {
   }
 }
 
-function Page() {
+function Page(pageProps) {
+  const { сertifications } = pageProps;
   return (
     <>
       <div className='content-container small'>
@@ -63,11 +65,7 @@ function Page() {
             <p><span className='marked'>Technologies:</span> Bitrix CMS · Progressive Web Applications (PWAs) · SCSS · Scalable Vector Graphics (SVG) · ZURB Foundation Framework · SEO · HTML · CSS · JavaScript · Vue.js · jQuery · Git · PHP</p>
           </CardBlock>
         </Card>
-        <Card heading={'Certifications'}>
-          <CardBlock heading={'All about Node.js'}>
-
-          </CardBlock>
-        </Card>
+        <Certifications certifications={сertifications}/>
         <Card heading={'Education'}>
           <CardBlock heading={'Master’s, Organizational Management in West Ukrainian National University'} image={WUNU} imageAlt={'WUNU'}>
             <span>Sep 2009 - Jun 2010</span>
