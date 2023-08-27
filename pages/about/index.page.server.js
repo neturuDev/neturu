@@ -5,7 +5,44 @@ export async function onBeforeRender(pageContext) {
     // const { movieId } = pageContext.routeParams;
   
     // `.page.server.js` files always run in Node.js; we could use SQL/ORM queries here.
-    const response = await fetchAPI(`
+    const aboutResponse = await fetchAPI(`
+      {
+        queryAboutmeContents {
+          id,
+          flatData {
+          text
+          }
+        }
+      }
+    `);
+    const skillsResponse = await fetchAPI(`
+      {
+        querySkillsContents {
+          id,
+          flatData{
+            title,
+            description
+          }
+        }
+      }
+    `);
+    const experienceResponse = await fetchAPI(`
+    {
+      queryExperinceContents {
+        id,
+        flatData{
+          title,
+          company,
+          startDate,
+          endDate,
+          total,
+          projectDescription,
+          responsibilities,
+          technologies
+        }
+      }
+    }`);
+    const сertificationsResponse = await fetchAPI(`
       {
         queryCertificationsContents {
           id,
@@ -25,11 +62,33 @@ export async function onBeforeRender(pageContext) {
       }
     `);
 
-    let сertifications = response ? response.queryCertificationsContents : [];
+    const educationResponse = await fetchAPI(`
+      {
+        queryEducationContents {
+          id,
+          flatData{
+            title,
+            image{
+              url,
+              id,
+              metadata
+            },
+            startDate,
+            endDate
+          }
+        }
+      }
+    `);
+
+    let about = aboutResponse ? aboutResponse.queryAboutmeContents[0].flatData.text : [];
+    let skills = skillsResponse ? skillsResponse.querySkillsContents : [];
+    let experience = experienceResponse ? experienceResponse.queryExperinceContents : [];
+    let сertifications = сertificationsResponse ? сertificationsResponse.queryCertificationsContents : [];
+    let education = educationResponse ? educationResponse.queryEducationContents : [];
   
     // Our render and hydrate functions we defined earlier pass `pageContext.pageProps` to
     // the root React component `Page`; this is where we define `pageProps`.
-    const pageProps = { сertifications };
+    const pageProps = { about, skills, experience, сertifications, education };
   
     // We make `pageProps` available as `pageContext.pageProps`
     return {
