@@ -1,7 +1,4 @@
 import React from 'react';
-import Card from '../../components/Card';
-import CardBlock from '../../components/CardBlock';
-import WUNU from '../../renderer/WUNU.png';
 import Certifications from '../../components/Сertifications';
 import About from '../../components/About';
 import Skills from '../../components/Skills';
