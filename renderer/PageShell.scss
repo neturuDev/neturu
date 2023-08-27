@@ -176,12 +176,12 @@ figure{
     top: -1.362rem;
     left: calc(var(--global-padding)*1.5);
   }
-  .subheading{
-    font-size: 0.9em;
-    span{
-      display: block;
+    .subheading{
+      font-size: 0.9em;
+      span{
+        display: block;
+      }
     }
-  }
 }
 
 .about-card{
@@ -230,6 +230,19 @@ figure{
       }
     }
   }
+}
+
+.certification-link-wrapper{
+  display: flex;
+  justify-content: end;
+}
+
+.certification-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-light);
+  border-bottom: 1px dashed var(--color-primary);
 }
 
 .blog-post-list{
@@ -366,19 +379,32 @@ figure{
     min-width: 0px;
     box-sizing: border-box;
     min-width: 0px;
+    justify-content: center;
 .certification {
     min-width: 0px;
-    width: calc(50% - 10px);
-    background-color: #ffffff;
-    margin-bottom: 20px;
+    width: 100%;
+    background-color: var(--color-snow-white);
+    margin-top: 20px;
     overflow: hidden;
     border-radius: 0.5rem;
-    &:nth-child(even) {
-      margin-left: 10px;
+    &:first-child {
+      margin-top: 0;
     }
-
-    &:nth-child(odd) {
-      margin-right: 10px;
+    .certification-data{
+      margin: 0 10px 10px;
+      padding-top: 10px;
+      border-top: 2px solid var(--color-primary-light);
+      .certification-heading{
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+      }
+      .certification-subheading{
+        color: var(--color-primary);
+        span{
+          display: block;
+          margin-bottom: 0.2em;
+        }
+      }
     }
   }
 }
@@ -419,6 +445,21 @@ figure{
 }
 
 @media screen and (min-width: 680px) {
+  .certifications-grid {
+      .certification {
+        width: calc(50% - 10px);
+        &:nth-child(even) {
+          margin-left: 10px;
+        }
+        &:nth-child(odd) {
+          margin-right: 10px;
+        }
+        &:nth-child(-n+2) {
+          margin-top: 0;
+        }
+      }
+    }
+
   .blog-post-list{
     .blog-list-item{
       width: calc(50% - 2rem);
