@@ -23,6 +23,7 @@
   --color-primary-light: #08259F;
   --color-primary-bright: #3c71ff;
   --color-secondary: #000717;
+  --color-text: #d8ccd8;
   --color-white: #FFEDFF;
   --color-snow-white: #ffffff;
 }
@@ -47,7 +48,7 @@ body {
 }
 
 body {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 img{
@@ -55,9 +56,29 @@ img{
   height: auto;
 }
 
+h1, h2, h3, h4, h5 {
+  margin-bottom: 0.8em;
+  color: var(--color-white);
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p {
+  letter-spacing: 0.01em;
+  word-spacing: 0.1em;
+  line-height: 1.4em;
+  &:not(:last-child){
+    margin-bottom: 1em;
+  }
+  a {
+    text-decoration: wavy underline var(--color-primary-bright);
+  }
+  .marked{
+    color: var(--color-white);
+  }
 }
 
 figure{
@@ -122,11 +143,45 @@ figure{
     }
     .content-container{
       max-width: 75rem;
+      &.small {
+        max-width: 55rem;
+      }
     }
     .article-cantainer{
       max-width: 43rem;
     }
   }
+}
+
+.card{
+  // max-width: 40rem;
+  background-color: var(--color-primary-light);
+  border-radius: var(--border-radius);
+  padding: calc(var(--global-padding) + 0.5rem);
+  margin-bottom: var(--global-padding-double);
+  position: relative;
+  &.with-heading {
+    margin-top: var(--global-padding);
+    margin-bottom: calc(var(--global-padding-double)*1.5);
+    padding-top: calc(var(--global-padding-double)*1.4);
+  }
+  .card-heading{
+    display: inline-block;
+    padding: var(--global-padding-half) var(--global-padding);
+    border-radius: 2em;
+    background-color: var(--color-primary-bright);
+    color: var(--color-primary-light);
+    box-shadow: 0 0 30px rgba(3, 38, 150, 0.5) inset, -1.5px 1.5px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -1.362rem;
+    left: calc(var(--global-padding)*1.5);
+  }
+    .subheading{
+      font-size: 0.9em;
+      span{
+        display: block;
+      }
+    }
 }
 
 .about-card{
@@ -175,6 +230,19 @@ figure{
       }
     }
   }
+}
+
+.certification-link-wrapper{
+  display: flex;
+  justify-content: end;
+}
+
+.certification-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-light);
+  border-bottom: 1px dashed var(--color-primary);
 }
 
 .blog-post-list{
@@ -288,6 +356,70 @@ figure{
   }
 }
 
+.card-block:not(:last-child){
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.image-block{
+  .image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      max-width: 8rem;
+    }
+  }
+}
+
+.certifications-grid{
+  display: flex;
+    flex-flow: wrap;
+    min-width: 0px;
+    box-sizing: border-box;
+    min-width: 0px;
+    justify-content: center;
+.certification {
+    min-width: 0px;
+    width: 100%;
+    background-color: var(--color-snow-white);
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    .certification-data{
+      margin: 0 10px 10px;
+      padding-top: 10px;
+      border-top: 2px solid var(--color-primary-light);
+      .certification-heading{
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+      }
+      .certification-subheading{
+        color: var(--color-primary);
+        span{
+          display: block;
+          margin-bottom: 0.2em;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 449px) {
+  .image-block{
+    text-align: center;
+    .image-wrapper{
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
 @media screen and (min-width: 450px) {
   .about-card{
     padding: calc(var(--global-padding-double) + 0.5rem);
@@ -302,9 +434,32 @@ figure{
       }
     }
   }
+
+  .image-block{
+    display: flex;
+    align-items: center;
+    .image-wrapper{
+      margin-right: 1rem;
+    }
+  }
 }
 
 @media screen and (min-width: 680px) {
+  .certifications-grid {
+      .certification {
+        width: calc(50% - 10px);
+        &:nth-child(even) {
+          margin-left: 10px;
+        }
+        &:nth-child(odd) {
+          margin-right: 10px;
+        }
+        &:nth-child(-n+2) {
+          margin-top: 0;
+        }
+      }
+    }
+
   .blog-post-list{
     .blog-list-item{
       width: calc(50% - 2rem);
