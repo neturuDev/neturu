@@ -3,11 +3,12 @@ import BlogItem from '../../components/BlogItem';
 
 export { Page, getDocumentProps };
 
-function getDocumentProps() {
+function getDocumentProps(pageProps) {
+    const { pageTitle, pageDescription, pageLang } = pageProps.seo;
     return {
-        title: 'Статьи',
-        description: 'Статьи о веб-разработке, дизайнеб маркетинге и многом другом',
-        lang: 'ru',
+        title: pageTitle,
+        description: pageDescription,
+        lang: pageLang,
     };
 }
 
