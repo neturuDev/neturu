@@ -199,21 +199,26 @@ figure{
   .description{
     font-size: 1.2em;
     line-height: 1.5em;
-    margin-bottom: var(--global-padding-double);
+    margin-bottom: var(--global-padding);
   }
-  .socials{
+  .socials-warpper{
     display: flex;
-    align-items: center;
     justify-content: center;
-    .social{
-      &:not(:first-child){
-        margin-left: var(--global-padding);
-      }
-      .social-link{
-        width: 60px;
-        height: 60px;
-        svg{
-          width: 26px;
+    .socials {
+      display: flex;
+      flex-flow: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 380px;
+      .social {
+        margin: var(--global-padding) var(--global-padding-half) 0;
+        .social-link {
+          width: 60px;
+          height: 60px;
+          svg {
+            width: 26px;
+          }
         }
       }
     }
@@ -238,6 +243,7 @@ figure{
 
 .button{
   padding: var(--global-padding-half) var(--global-padding);
+  font-size: 1.1em;
 }
 
 .certification-link-wrapper{
