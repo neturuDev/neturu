@@ -8,11 +8,12 @@ import { parseISO } from 'date-fns';
 
 export { Page, getDocumentProps };
 
-function getDocumentProps() {
+function getDocumentProps(pageProps) {
+    const { pageTitle, pageDescription, pageLang } = pageProps.seo;
     return {
-        title: 'About • Volodymyr Full-Stack developer',
-        description: 'Volodymyr is a passionate software engineer with nine years of commercial experience',
-        lang: 'en',
+        title: pageTitle,
+        description: pageDescription,
+        lang: pageLang,
     };
 }
 

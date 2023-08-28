@@ -5,6 +5,20 @@ export async function onBeforeRender(pageContext) {
     // const { movieId } = pageContext.routeParams;
   
     // `.page.server.js` files always run in Node.js; we could use SQL/ORM queries here.
+    const seoResponse = await fetchAPI(`
+      {
+        queryAboutpageContents {
+          id,
+          flatData{
+            seo{
+              pageTitle,
+              pageDescription,
+              pageLang
+            }
+          }
+        }
+      }
+    `);
     const aboutResponse = await fetchAPI(`
       {
         queryAboutmeContents {
@@ -79,7 +93,7 @@ export async function onBeforeRender(pageContext) {
         }
       }
     `);
-
+    let seo = seoResponse? seoResponse.queryAboutpageContents[0].flatData.seo : [];
     let about = aboutResponse ? aboutResponse.queryAboutmeContents[0].flatData.text : [];
     let skills = skillsResponse ? skillsResponse.querySkillsContents : [];
     let experience = experienceResponse ? experienceResponse.queryExperinceContents : [];
@@ -88,7 +102,7 @@ export async function onBeforeRender(pageContext) {
   
     // Our render and hydrate functions we defined earlier pass `pageContext.pageProps` to
     // the root React component `Page`; this is where we define `pageProps`.
-    const pageProps = { about, skills, experience, certifications, education };
+    const pageProps = { about, seo, skills, experience, certifications, education };
   
     // We make `pageProps` available as `pageContext.pageProps`
     return {
