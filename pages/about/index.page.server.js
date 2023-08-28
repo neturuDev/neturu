@@ -42,7 +42,7 @@ export async function onBeforeRender(pageContext) {
         }
       }
     }`);
-    const сertificationsResponse = await fetchAPI(`
+    const certificationsResponse = await fetchAPI(`
       {
         queryCertificationsContents {
           id,
@@ -83,12 +83,12 @@ export async function onBeforeRender(pageContext) {
     let about = aboutResponse ? aboutResponse.queryAboutmeContents[0].flatData.text : [];
     let skills = skillsResponse ? skillsResponse.querySkillsContents : [];
     let experience = experienceResponse ? experienceResponse.queryExperinceContents : [];
-    let сertifications = сertificationsResponse ? сertificationsResponse.queryCertificationsContents : [];
+    let certifications = certificationsResponse ? certificationsResponse.queryCertificationsContents : [];
     let education = educationResponse ? educationResponse.queryEducationContents : [];
   
     // Our render and hydrate functions we defined earlier pass `pageContext.pageProps` to
     // the root React component `Page`; this is where we define `pageProps`.
-    const pageProps = { about, skills, experience, сertifications, education };
+    const pageProps = { about, skills, experience, certifications, education };
   
     // We make `pageProps` available as `pageContext.pageProps`
     return {

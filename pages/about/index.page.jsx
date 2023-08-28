@@ -17,15 +17,15 @@ function getDocumentProps() {
 }
 
 function Page(pageProps) {
-    const { about, skills, experience, сertifications, education } = pageProps;
-    сertifications.sort((a, b) => parseISO(b.flatData.issued) - parseISO(a.flatData.issued));
+    const { about, skills, experience, certifications, education } = pageProps;
+    certifications.sort((a, b) => parseISO(b.flatData.issued) - parseISO(a.flatData.issued));
     return (
         <>
             <div className='content-container small'>
                 <About about={about} />
                 <Skills skills={skills} />
                 <Experience experience={experience} />
-                <Certifications certifications={сertifications} />
+                <Certifications certifications={certifications} />
                 <Education education={education} />
             </div>
         </>
