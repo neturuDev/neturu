@@ -247,6 +247,7 @@ figure{
 }
 
 .certification-link-wrapper{
+  min-height: 21px;
   display: flex;
   justify-content: end;
 }
@@ -401,6 +402,8 @@ figure{
     margin-top: 20px;
     overflow: hidden;
     border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
     &:first-child {
       margin-top: 0;
     }
@@ -408,6 +411,11 @@ figure{
       margin: 0 10px 10px;
       padding-top: 10px;
       border-top: 2px solid var(--color-primary-light);
+      display: flex;
+      flex-direction:column;
+      justify-content: space-between;
+      height: auto;
+      flex: 1 1 0;
       .certification-heading{
         color: var(--color-primary);
         margin-bottom: 0.5rem;
