@@ -4,7 +4,7 @@ import About from '../../components/About';
 import Skills from '../../components/Skills';
 import Experience from '../../components/Experience';
 import Education from '../../components/Education';
-import { parseISO } from 'date-fns';
+import { sortByDate, sortByNumber } from '../../helpers/sorting';
 
 export { Page, getDocumentProps };
 
@@ -19,7 +19,10 @@ function getDocumentProps(pageProps) {
 
 function Page(pageProps) {
     const { about, skills, experience, certifications, education } = pageProps;
-    certifications.sort((a, b) => parseISO(b.flatData.issued) - parseISO(a.flatData.issued));
+    sortByDate(certifications, 'issued');
+    sortByDate(experience, 'endDate');
+    sortByDate(education, 'endDate');
+    sortByNumber(skills, 'sorting');
     return (
         <>
             <div className='content-container small'>
