@@ -1,9 +1,6 @@
 import fetchAPI from "../../lib/squidex";
 
-export async function onBeforeRender(pageContext) {
-    // The route parameter of `/star-wars/@movieId` is available at `pageContext.routeParams`
-    // const { movieId } = pageContext.routeParams;
-  
+export async function onBeforeRender(pageContext) {  
     // `.page.server.js` files always run in Node.js; we could use SQL/ORM queries here.
     const seoResponse = await fetchAPI(`
       {
@@ -35,7 +32,8 @@ export async function onBeforeRender(pageContext) {
           id,
           flatData{
             title,
-            description
+            description,
+            sorting
           }
         }
       }
