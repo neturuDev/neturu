@@ -27,6 +27,7 @@ function Page(pageProps) {
                         <div className='socials'>
                             <div className='social'>
                                 <a
+                                    alt={'linkedin page'}
                                     href='https://www.linkedin.com/in/cherevchuk/'
                                     className='social-link button-shape'
                                     target='_blank'
@@ -45,6 +46,7 @@ function Page(pageProps) {
                             </div>
                             <div className='social'>
                                 <a
+                                    alt={'github page'}
                                     href='https://github.com/neturuDev'
                                     className='social-link button-shape'
                                     target='_blank'
