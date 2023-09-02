@@ -1,7 +1,10 @@
+export { render };
+// See https://vite-plugin-ssr.com/data-fetching
+export const passToClient = ['pageProps', 'urlPathname'];
+
 import ReactDOMServer from 'react-dom/server';
-import React from 'react';
 import { PageShell } from './PageShell';
-import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr';
+import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr/server';
 import fontUrl from '../fonts/Comfortaa-VariableFont_wght.ttf';
 import faviconUrl from './icons/favicon.ico';
 import favicon16Url from './icons/favicon-16x16.png';
@@ -10,12 +13,10 @@ import chromeIconUrl from './icons/android-chrome-192x192.png';
 import safariIconUrl from './icons/safari-pinned-tab.svg';
 import appleIconUrl from './icons/apple-touch-icon.png';
 
-export { render };
-// See https://vite-plugin-ssr.com/data-fetching
-export const passToClient = ['pageProps', 'urlPathname'];
-
 async function render(pageContext) {
     const { Page, pageProps } = pageContext;
+    // This render() hook only supports SSR, see https://vite-plugin-ssr.com/render-modes for how to modify render() to support SPA
+    if (!Page) throw new Error('My render() hook expects pageContext.Page to be defined');
     const pageHtml = ReactDOMServer.renderToString(
         <PageShell pageContext={pageContext}>
             <Page {...pageProps} />
@@ -23,11 +24,14 @@ async function render(pageContext) {
     );
 
     // See https://vite-plugin-ssr.com/head
-
-    // Our custom export is available as `pageContext.exports.getDocumentProps`
     const { getDocumentProps } = pageContext.exports;
-
     // `getDocumentProps()` can use the fetched data to provide the page's meta data
+
+    // const title =
+    //     // Conditional call in case a page doesn't define getDocumentProps()
+    //     getDocumentProps?.(pageProps).title;
+    // const description = getDocumentProps?.(pageProps).description;
+    // const lang = getDocumentProps?.(pageProps).lang;
     const { title, description, lang } = getDocumentProps(pageProps);
 
     const documentHtml = escapeInject`<!DOCTYPE html>
@@ -51,7 +55,7 @@ async function render(pageContext) {
         <title>${title}</title>
       </head>
       <body>
-        <div id="page-view">${dangerouslySkipEscape(pageHtml)}</div>
+        <div id="react-root">${dangerouslySkipEscape(pageHtml)}</div>
       </body>
     </html>`;
 
