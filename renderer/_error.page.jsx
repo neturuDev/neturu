@@ -1,39 +1,29 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import Error from '../components/Error';
 
-export { Page, getDocumentProps }
+export { Page };
 
-function setErrorData(is404) {
-  let errorHeading, errorDescription;
-  if (is404) {
-    errorHeading = '404 Page Not Found';
-    errorDescription = 'This page could not be found.';
-  } else {
-    errorHeading = '500 Internal Server Error';
-    errorDescription = 'Something went wrong.';
-  }
-
-  return {errorHeading, errorDescription};
-}
-
-function getDocumentProps({ is404 }) {
-  const {errorHeading, errorDescription} = setErrorData(is404);
-  return {
-    title: errorHeading,
-    description: errorDescription,
-    lang: 'en'
-  }
-}
-
+Page.propTypes = {
+    is404: PropTypes.bool,
+};
 function Page({ is404 }) {
-  const {errorHeading, errorDescription} = setErrorData(is404);
-
-  return (
-    <div className='content-container flex-center'>
-      <Error
-       heading={errorHeading}
-        description={errorDescription}
-      />
-    </div>
-  )
+    if (is404) {
+        return (
+            <div className='content-container flex-center'>
+                <Error
+                    heading={'404 Page Not Found'}
+                    description={'This page could not be found.'}
+                />
+            </div>
+        );
+    } else {
+        return (
+            <div className='content-container flex-center'>
+                <Error
+                    heading={'500 Internal Error'}
+                    description={'Something went wrong.'}
+                />
+            </div>
+        );
+    }
 }
