@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Avatar() {
     return (
         <svg
@@ -71,5 +69,5 @@ export default function Avatar() {
                 H273.455z'
             />
         </svg>
-    );
+    )
 }

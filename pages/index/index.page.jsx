@@ -1,20 +1,20 @@
-import React from 'react';
-import Avatar from '../../components/Avatar';
-import parse from 'html-react-parser';
+import Avatar from '../../components/Avatar'
+import parse from 'html-react-parser'
 
-export { Page, getDocumentProps };
+// eslint-disable-next-line react-refresh/only-export-components
+export { Page, getDocumentProps }
 
 function getDocumentProps(pageProps) {
-    const { pageTitle, pageDescription, pageLang } = pageProps.mainPageData.seo;
+    const { pageTitle, pageDescription, pageLang } = pageProps.mainPageData.seo
     return {
         title: pageTitle,
         description: pageDescription,
         lang: pageLang,
-    };
+    }
 }
 
 function Page(pageProps) {
-    const { about } = pageProps.mainPageData;
+    const { about } = pageProps.mainPageData
     return (
         <>
             <div className='content-container flex-center'>
@@ -78,5 +78,5 @@ function Page(pageProps) {
                 </div>
             </div>
         </>
-    );
+    )
 }

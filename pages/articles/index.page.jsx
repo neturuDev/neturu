@@ -1,25 +1,25 @@
-import React from 'react';
-import BlogItem from '../../components/BlogItem';
+import BlogItem from '../../components/BlogItem'
 
-export { Page, getDocumentProps };
+// eslint-disable-next-line react-refresh/only-export-components
+export { Page, getDocumentProps }
 
 function getDocumentProps(pageProps) {
-    const { pageTitle, pageDescription, pageLang } = pageProps.seo;
+    const { pageTitle, pageDescription, pageLang } = pageProps.seo
     return {
         title: pageTitle,
         description: pageDescription,
         lang: pageLang,
-    };
+    }
 }
 
 function Page(pageProps) {
-    const { posts } = pageProps;
+    const { posts } = pageProps
     return (
         <>
             <div className='content-container'>
                 <div className='blog-post-list'>
                     {posts.map((post) => {
-                        const image = post.flatData.mainImage;
+                        const image = post.flatData.mainImage
                         return (
                             <BlogItem
                                 title={post.flatData.title}
@@ -32,10 +32,10 @@ function Page(pageProps) {
                                 minutesToRead={post.flatData.minutesToReadStr}
                                 key={post.id}
                             />
-                        );
+                        )
                     })}
                 </div>
             </div>
         </>
-    );
+    )
 }
