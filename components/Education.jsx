@@ -1,8 +1,9 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import EducationItem from './EducationItem';
+import { educationItemPropType } from '../renderer/PropTypeValues';
 
-export default function Education({ education }) {
+function Education({ education }) {
     return (
         <Card heading={'Education'}>
             {education.map((educationItem) => (
@@ -17,3 +18,9 @@ export default function Education({ education }) {
         </Card>
     );
 }
+
+Education.propTypes = {
+    education: PropTypes.arrayOf(PropTypes.shape(educationItemPropType)),
+};
+
+export default Education;

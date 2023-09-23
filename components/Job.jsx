@@ -1,7 +1,7 @@
-import React from 'react';
 import CardBlock from './CardBlock';
 import parse from 'html-react-parser';
 import Date from './Date';
+import { jobPropType } from '../renderer/PropTypeValues';
 
 const renderEndDate = (endDate) =>
     endDate ? (
@@ -13,7 +13,7 @@ const renderEndDate = (endDate) =>
         'Present'
     );
 
-export default function Job({ title, company, startDate, endDate, total, projectDescription, responsibilities, technologies }) {
+function Job({ title, company, startDate, endDate, total, projectDescription, responsibilities, technologies }) {
     return (
         <CardBlock heading={title}>
             <p className='subheading'>
@@ -40,3 +40,7 @@ export default function Job({ title, company, startDate, endDate, total, project
         </CardBlock>
     );
 }
+
+Job.propTypes = jobPropType;
+
+export default Job;

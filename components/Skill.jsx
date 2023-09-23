@@ -1,10 +1,14 @@
-import React from 'react';
 import CardBlock from './CardBlock';
+import { skillPropType } from '../renderer/PropTypeValues';
 
-export default function Skill({ title, description }) {
+function Skill({ title, description }) {
     return (
         <CardBlock heading={title}>
             <p>{description}</p>
         </CardBlock>
     );
 }
+
+Skill.propTypes = skillPropType;
+
+export default Skill;

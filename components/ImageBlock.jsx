@@ -1,6 +1,7 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+import { childrenPropType, imagePropType } from '../renderer/PropTypeValues';
 
-export default function ImageBlock({ image, imageAlt, children }) {
+function ImageBlock({ image, imageAlt, children }) {
     return (
         <div className='image-block'>
             <div className='image-wrapper'>
@@ -15,3 +16,11 @@ export default function ImageBlock({ image, imageAlt, children }) {
         </div>
     );
 }
+
+ImageBlock.propTypes = {
+    image: imagePropType,
+    imageAlt: PropTypes.string,
+    children: childrenPropType,
+};
+
+export default ImageBlock;

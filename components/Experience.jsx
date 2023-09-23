@@ -1,8 +1,9 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import Job from './Job';
+import { jobPropType } from '../renderer/PropTypeValues';
 
-export default function Experience({ experience }) {
+function Experience({ experience }) {
     return (
         <Card heading={'Experience'}>
             {experience.map((job) => {
@@ -23,3 +24,9 @@ export default function Experience({ experience }) {
         </Card>
     );
 }
+
+Experience.propTypes = {
+    experience: PropTypes.arrayOf(PropTypes.shape(jobPropType)),
+};
+
+export default Experience;
