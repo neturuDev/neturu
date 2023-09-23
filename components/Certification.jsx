@@ -1,7 +1,7 @@
-import React from 'react';
 import Date from './Date';
+import { certificationPropType } from '../renderer/PropTypeValues';
 
-export default function Certification({ title, image, issuingOrganization, issued, credentialLink }) {
+function Certification({ title, image, issuingOrganization, issued, credentialLink }) {
     return (
         <div className='certification'>
             <img
@@ -51,3 +51,7 @@ export default function Certification({ title, image, issuingOrganization, issue
         </div>
     );
 }
+
+Certification.propTypes = certificationPropType;
+
+export default Certification;

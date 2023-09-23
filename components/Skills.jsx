@@ -1,8 +1,9 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import Skill from './Skill';
+import { skillPropType } from '../renderer/PropTypeValues';
 
-export default function Skills({ skills }) {
+function Skills({ skills }) {
     return (
         <Card heading={'Skills'}>
             {skills.map((skill) => {
@@ -17,3 +18,14 @@ export default function Skills({ skills }) {
         </Card>
     );
 }
+
+Skills.propTypes = {
+    skills: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            flatData: PropTypes.shape(skillPropType),
+        })
+    ),
+};
+
+export default Skills;

@@ -1,8 +1,8 @@
-import React from 'react';
 import CardBlock from './CardBlock';
 import Date from './Date';
+import { educationItemPropType } from '../renderer/PropTypeValues';
 
-export default function EducationItem({ title, startDate, endDate, image }) {
+function EducationItem({ title, startDate, endDate, image }) {
     return (
         <CardBlock
             heading={title}
@@ -23,3 +23,7 @@ export default function EducationItem({ title, startDate, endDate, image }) {
         </CardBlock>
     );
 }
+
+EducationItem.propTypes = educationItemPropType;
+
+export default EducationItem;

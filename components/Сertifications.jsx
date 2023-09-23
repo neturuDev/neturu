@@ -1,8 +1,9 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import Certification from './Certification';
+import { certificationPropType } from '../renderer/PropTypeValues';
 
-export default function Certifications({ certifications }) {
+function Certifications({ certifications }) {
     return (
         <Card heading={'Certifications'}>
             <div className='certifications-grid'>
@@ -24,3 +25,9 @@ export default function Certifications({ certifications }) {
         </Card>
     );
 }
+
+Certifications.propTypes = {
+    certifications: PropTypes.arrayOf(PropTypes.shape(certificationPropType)),
+};
+
+export default Certifications;
