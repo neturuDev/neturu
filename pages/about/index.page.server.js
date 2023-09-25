@@ -1,4 +1,4 @@
-import fetchAPI from '../../lib/squidex'
+import fetchAPI from '../../lib/squidex';
 
 // eslint-disable-next-line no-unused-vars
 export async function onBeforeRender(pageContext) {
@@ -16,7 +16,7 @@ export async function onBeforeRender(pageContext) {
           }
         }
       }
-    `)
+    `);
     const aboutResponse = await fetchAPI(`
       {
         queryAboutmeContents {
@@ -26,7 +26,7 @@ export async function onBeforeRender(pageContext) {
           }
         }
       }
-    `)
+    `);
     const skillsResponse = await fetchAPI(`
       {
         querySkillsContents {
@@ -38,7 +38,7 @@ export async function onBeforeRender(pageContext) {
           }
         }
       }
-    `)
+    `);
     const experienceResponse = await fetchAPI(`
     {
       queryExperinceContents {
@@ -54,7 +54,7 @@ export async function onBeforeRender(pageContext) {
           technologies
         }
       }
-    }`)
+    }`);
     const certificationsResponse = await fetchAPI(`
       {
         queryCertificationsContents {
@@ -73,7 +73,7 @@ export async function onBeforeRender(pageContext) {
           }
         }
       }
-    `)
+    `);
 
     const educationResponse = await fetchAPI(`
       {
@@ -91,28 +91,28 @@ export async function onBeforeRender(pageContext) {
           }
         }
       }
-    `)
-    let seo = seoResponse ? seoResponse.queryAboutpageContents[0].flatData.seo : []
-    let about = aboutResponse ? aboutResponse.queryAboutmeContents[0].flatData.text : []
-    let skills = skillsResponse ? skillsResponse.querySkillsContents : []
-    let experience = experienceResponse ? experienceResponse.queryExperinceContents : []
-    let certifications = certificationsResponse ? certificationsResponse.queryCertificationsContents : []
-    let education = educationResponse ? educationResponse.queryEducationContents : []
+    `);
+    let seo = seoResponse ? seoResponse.queryAboutpageContents[0].flatData.seo : [];
+    let about = aboutResponse ? aboutResponse.queryAboutmeContents[0].flatData.text : [];
+    let skills = skillsResponse ? skillsResponse.querySkillsContents : [];
+    let experience = experienceResponse ? experienceResponse.queryExperinceContents : [];
+    let certifications = certificationsResponse ? certificationsResponse.queryCertificationsContents : [];
+    let education = educationResponse ? educationResponse.queryEducationContents : [];
 
     // Our render and hydrate functions we defined earlier pass `pageContext.pageProps` to
     // the root React component `Page`; this is where we define `pageProps`.
-    const pageProps = { about, seo, skills, experience, certifications, education }
+    const pageProps = { about, seo, skills, experience, certifications, education };
 
     // We make `pageProps` available as `pageContext.pageProps`
     return {
         pageContext: {
             pageProps,
         },
-    }
+    };
 }
 
 // By default `pageContext` is available only on the server. But our hydrate function
 // we defined earlier runs in the browser and needs `pageContext.pageProps`; we use
 // `passToClient` to tell `vite-plugin-ssr` to serialize and make `pageContext.pageProps`
 // available to the browser.
-export const passToClient = ['pageProps']
+export const passToClient = ['pageProps'];

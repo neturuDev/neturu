@@ -1,4 +1,4 @@
-import { childrenPropType } from '../renderer/PropTypeValues'
+import { childrenPropType } from '../renderer/PropTypeValues';
 
 function DefaultLayout({ children }) {
     return (
@@ -41,11 +41,11 @@ function DefaultLayout({ children }) {
                 <footer className='footer'>©2017-{new Date().getFullYear()} Neturu</footer>
             </div>
         </>
-    )
+    );
 }
 
 DefaultLayout.propTypes = {
     children: childrenPropType,
-}
+};
 
-export default DefaultLayout
+export default DefaultLayout;
