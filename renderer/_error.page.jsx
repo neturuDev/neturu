@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
-import Error from '../components/Error'
+import PropTypes from 'prop-types';
+import Error from '../components/Error';
 
-export { Page }
+export { Page };
 
 Page.propTypes = {
     is404: PropTypes.bool,
-}
+};
 function Page({ is404 }) {
     if (is404) {
         return (
@@ -17,7 +17,7 @@ function Page({ is404 }) {
                     />
                 </div>
             </>
-        )
+        );
     } else {
         return (
             <>
@@ -28,6 +28,6 @@ function Page({ is404 }) {
                     />
                 </div>
             </>
-        )
+        );
     }
 }

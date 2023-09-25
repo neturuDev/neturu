@@ -1,23 +1,23 @@
-import parse from 'html-react-parser'
-import Date from '../../components/Date'
+import parse from 'html-react-parser';
+import Date from '../../components/Date';
 
 // eslint-disable-next-line react-refresh/only-export-components
-export { Page, getDocumentProps }
+export { Page, getDocumentProps };
 
 function getDocumentProps(pageProps) {
-    const { post } = pageProps
-    const currentPageTitle = post.seo ? post.seo.pageTitle : `${post.title} | Neturu`
-    const currentPageDescription = post.seo ? post.seo.pageDescription : post.preview
+    const { post } = pageProps;
+    const currentPageTitle = post.seo ? post.seo.pageTitle : `${post.title} | Neturu`;
+    const currentPageDescription = post.seo ? post.seo.pageDescription : post.preview;
     return {
         title: currentPageTitle,
         description: currentPageDescription,
         lang: 'ru',
-    }
+    };
 }
 
 function Page(pageProps) {
-    const { post, source } = pageProps
-    const image = post.mainImage
+    const { post, source } = pageProps;
+    const image = post.mainImage;
     return (
         <>
             <div className='article-cantainer'>
@@ -44,5 +44,5 @@ function Page(pageProps) {
                 </div>
             </div>
         </>
-    )
+    );
 }

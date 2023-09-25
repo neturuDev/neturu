@@ -69,5 +69,5 @@ export default function Avatar() {
                 H273.455z'
             />
         </svg>
-    )
+    );
 }
