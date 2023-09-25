@@ -1,20 +1,20 @@
-import Avatar from '../../components/Avatar'
-import parse from 'html-react-parser'
+import Avatar from '../../components/Avatar';
+import parse from 'html-react-parser';
 
 // eslint-disable-next-line react-refresh/only-export-components
-export { Page, getDocumentProps }
+export { Page, getDocumentProps };
 
 function getDocumentProps(pageProps) {
-    const { pageTitle, pageDescription, pageLang } = pageProps.mainPageData.seo
+    const { pageTitle, pageDescription, pageLang } = pageProps.mainPageData.seo;
     return {
         title: pageTitle,
         description: pageDescription,
         lang: pageLang,
-    }
+    };
 }
 
 function Page(pageProps) {
-    const { about } = pageProps.mainPageData
+    const { about } = pageProps.mainPageData;
     return (
         <>
             <div className='content-container flex-center'>
@@ -32,6 +32,7 @@ function Page(pageProps) {
                                     href='https://www.linkedin.com/in/cherevchuk/'
                                     className='social-link button-shape'
                                     target='_blank'
+                                    title={'To my linkedin page'}
                                     rel='noreferrer'
                                 >
                                     <svg
@@ -49,9 +50,10 @@ function Page(pageProps) {
                                 <a
                                     alt={'github'}
                                     aria-label={'Link to my github page'}
-                                    href='https://github.com/neturuDev'
+                                    href='https://github.com/neturuDev/neturu'
                                     className='social-link button-shape'
                                     target='_blank'
+                                    title={'This project on GitHub'}
                                     rel='noreferrer'
                                 >
                                     <svg
@@ -78,5 +80,5 @@ function Page(pageProps) {
                 </div>
             </div>
         </>
-    )
+    );
 }
