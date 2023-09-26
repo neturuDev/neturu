@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Avatar from '../../components/Avatar';
 import parse from 'html-react-parser';
 
@@ -13,6 +14,8 @@ function getDocumentProps(pageProps) {
     };
 }
 
+const Spinner = () => <p>Loading....</p>;
+
 function Page(pageProps) {
     const { about } = pageProps.mainPageData;
     return (
@@ -22,7 +25,9 @@ function Page(pageProps) {
                     <div className='image-wrapper'>
                         <Avatar />
                     </div>
-                    <div className='description'>{parse(about)}</div>
+                    <Suspense fallback={<Spinner />}>
+                        <div className='description'>{parse(about)}</div>
+                    </Suspense>
                     <div className='socials-warpper'>
                         <div className='socials'>
                             <div className='social'>
